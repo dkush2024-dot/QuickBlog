@@ -4,6 +4,7 @@ import cors from 'cors'
 import connectDB from './configs/db.js';
 import adminRouter from './routes/adminRoutes.js'
 import blogRouter from './routes/blogRoutes.js';
+import newsletterRouter from './routes/newsletterRoutes.js';
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json())
 app.get('/', (req, res) => res.send("API is Working"))
 app.use('/api/admin', adminRouter)
 app.use('/api/blog', blogRouter)
+app.use('/api/newsletter', newsletterRouter)
 
 const PORT = process.env.PORT || 3000;
 
